@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+
+    <script>
+
+    function Ctrl($scope, $sce) {
+
+        $scope.title = 'Lorem Ipsum';
+
+        $scope.html = $sce.trustAsHtml('<h1>Neque porro quisquam est qui dolorem ipsum quia dolor...</h1>');
+
+        $scope.$watch('html', function (oldValue, newValue) {
+
+            console.log('#### oldValue = ', oldValue, newValue);
+
+            if (newValue) {
+
+                $scope.html = $sce.trustAsHtml(newValue);
+
+
+
+            }
+
+        });
+
+    }
+
+
+
+    angular.module('transclude', [])
+
+            .directive('pane', function(){
+
+                return {
+
+                    restrict: 'E',
+
+                    transclude: true,
+
+                    scope: { title:'@' },
+
+                    template: '<div style="border: 1px solid black;">' +
+
+                            '<div style="background-color: gray"><h3>{{title}}</h3></div>' +
+
+                            '<div class="insertion-point" ng-transclude></div>' +
+
+                            '</div>'
+
+                };
+
+            });
+
+    </script>
+
+</head>
+<body ng-app="transclude" ng-csp>
+              <br/><br/><br/>
+              <div ng-controller="Ctrl">
+              <input ng-model="title"><br>
+              <textarea ng-model="html"></textarea> <br/>
+              <pane title="{{title}}"><div ng-bind-html="html"></div></pane>
+              </div>
+
+</body>
+</html>
