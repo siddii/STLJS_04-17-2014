@@ -18,4 +18,5 @@ module.exports = function (grunt) {
       }
     }
   });
+  grunt.registerTask('default', ['connect:server']);
 };
