@@ -9,6 +9,10 @@
         }]);
         myApp.controller("DemoController", function ($scope) {
             $scope.name = "Siddique";
+
+            $scope.upper = function () {
+                return $scope.name.toUpperCase();
+            }
         });
     </script>
 </head>
@@ -16,7 +20,8 @@
 <body ng-app="OverrideMustache" ng-controller="DemoController">
 <h1>Override mustache expression to ##</h1>
 
-<div> Is the name = {{name}} interpolated?</div>
-<div> Is the name = ##name## interpolated?</div>
+<div> Type Name : <input type="text" ng-model="name"/></div><br/>
+<div> Name = ##name##</div><br/>
+<div> Uppercased Name = ##upper()##</div><br/>
 </body>
 </html>
