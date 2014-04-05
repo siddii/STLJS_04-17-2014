@@ -13,7 +13,6 @@
                 }
             });
         }
-
         angular.module('transclude', [])
                 .directive('pane', function () {
                     return {
@@ -29,13 +28,12 @@
     </script>
 </head>
 <body ng-app="transclude" ng-csp>
-<div ng-controller="Ctrl">
-                  <input ng-model="title"><br>
-                  <textarea ng-model="html"></textarea> <br/>
-                  
-    <pane title="{{title}}">
-        <div ng-bind-html="html"></div>
-    </pane>
-</div>
+    <div ng-controller="Ctrl">
+        <input ng-model="title"><br>
+        <textarea ng-model="html"></textarea> <br/>
+        <pane title="{{title}}">
+            <div ng-bind-html="html"></div>
+        </pane>
+    </div>
 </body>
 </html>

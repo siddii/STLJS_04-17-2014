@@ -1,42 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
-
-    var myApp = angular.module('OverrideMustache', [], function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('##');
-        $interpolateProvider.endSymbol('##');
-    });
-
-
-    myApp.controller("DemoController", function ($scope) {
-
-        $scope.name = "Siddique";
-
-    });
-
-
+    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('OverrideMustache', [], function ($interpolateProvider) {
+            $interpolateProvider.startSymbol('##');
+            $interpolateProvider.endSymbol('##');
+        });
+        myApp.controller("DemoController", function ($scope) {
+            $scope.name = "Siddique";
+        });
     </script>
-
 </head>
 
-<body
- ng­app="interpolation­test" ng­controller="DemoController">
+<body ng-app="OverrideMustache" ng-controller="DemoController">
+<h1>Interpolation Test</h1>
 
-              <h1>Interpolation Test</h1>
-
- 
-
-              
-<div> Do string interpolate {{name}}</div>
-
- 
-
-              
-<div>##name##</div>
-
-                           
-
+<div> Is the name = {{name}} interpolated?</div>
+<div> Is the name = ##name## interpolated?</div>
 </body>
-
 </html>
