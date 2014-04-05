@@ -4,11 +4,10 @@
     <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
     <script>
         function Ctrl($scope, $sce) {
-            $scope.title = 'Lorem Ipsum';
-            $scope.html = $sce.trustAsHtml('<h1>Neque porro quisquam est qui dolorem ipsum quia dolor...</h1>');
+            $scope.title = 'Title';
+            $scope.html = $sce.trustAsHtml('<h1>Dummy Header</h1>');
             $scope.$watch('html', function (oldValue, newValue) {
-                console.log('#### oldValue = ', oldValue, newValue);
-                if (newValue) {
+                if (oldValue && newValue) {
                     $scope.html = $sce.trustAsHtml(newValue);
                 }
             });

@@ -3,10 +3,10 @@
 <head>
     <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
     <script type="text/javascript">
-        var myApp = angular.module('OverrideMustache', [], function ($interpolateProvider) {
+        var myApp = angular.module('OverrideMustache', [], ['$interpolateProvider', function ($interpolateProvider) {
             $interpolateProvider.startSymbol('##');
             $interpolateProvider.endSymbol('##');
-        });
+        }]);
         myApp.controller("DemoController", function ($scope) {
             $scope.name = "Siddique";
         });
@@ -14,7 +14,7 @@
 </head>
 
 <body ng-app="OverrideMustache" ng-controller="DemoController">
-<h1>Interpolation Test</h1>
+<h1>Override mustache expression to ##</h1>
 
 <div> Is the name = {{name}} interpolated?</div>
 <div> Is the name = ##name## interpolated?</div>
