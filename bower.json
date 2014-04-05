@@ -1,0 +1,21 @@
+{
+  "name": "STLJS_03-17-2014",
+  "version": "0.0.0",
+  "authors": [
+    "Siddique Hameed <siddii+git@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.15",
+    "bootstrap": "~3.1.1"
+  }
+}
