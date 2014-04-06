@@ -3,17 +3,21 @@
 <head>
     <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
     <script type="text/javascript">
-
-        angular.module('SimpleExample', []).controller('DemoController', ['$scope', function ($scope) {
+        angular.module('SimpleExample', []).controller('DemoController', ['$scope', '$interpolate', function ($scope, $interpolate) {
             console.log('#### Simple Example');
             $scope.colors = $scope.colors = [
-                {name:'white', hash:'light'},
-                {name:'red', hash:'dark'},
-                {name:'blue', hash:'dark'},
-                {name:'yellow', hash:'light'}
+                {name: 'white', hash: '#fffff'},
+                {name: 'red', hash: '#ff0000'},
+                {name: 'blue', hash: '#0000ff'},
+                {name: 'yellow', hash: '#ffff00'}
             ];
-
             $scope.color = $scope.colors[0];
+
+//            $scope.$watch('color', function (oldValue, newValue) {
+//                if (oldValue && newValue) {
+//                    $scope.colorString = $interpolate("Name = {{color.name}}, Hash = {{color.hash}}")($scope);
+//                }
+//            });
 
         }]);
 
@@ -25,7 +29,9 @@ Background Color: <select ng-model="color" ng-options="c.name for c in colors"><
 
 Color Name: {{color.name}} <br/>
 
-Color Hash: {{color.hash}}
+Color Hash: {{color.hash}} <br/>
+
+<!--Color String: {{colorString}} <br/>-->
 
 
 </body>
