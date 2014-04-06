@@ -3,20 +3,29 @@
 <head>
     <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
     <script type="text/javascript">
-        angular.module('SimpleExample', [], ['$interpolateProvider', function ($interpolateProvider) {
-            $interpolateProvider.startSymbol('##');
-            $interpolateProvider.endSymbol('##');
-        }]).controller("DemoController", function ($scope) {
-            $scope.name = "Siddique";
 
-        });
+        angular.module('SimpleExample', []).controller('DemoController', ['$scope', function ($scope) {
+            console.log('#### Simple Example');
+            $scope.colors = $scope.colors = [
+                {name:'white', hash:'light'},
+                {name:'red', hash:'dark'},
+                {name:'blue', hash:'dark'},
+                {name:'yellow', hash:'light'}
+            ];
+
+            $scope.color = $scope.colors[0];
+
+        }]);
+
     </script>
 </head>
-<body ng-app>
+<body ng-app="SimpleExample" ng-controller="DemoController" style="background: {{color.name}}">
 
-<div>
-    <a ng-href="img/{{username}}.jpg">Hello {{username}}!</a>
-</div>
+Background Color: <select ng-model="color" ng-options="c.name for c in colors"></select><br/>
+
+Color Name: {{color.name}} <br/>
+
+Color Hash: {{color.hash}}
 
 
 </body>
