@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('SimpleExample', [], ['$interpolateProvider', function ($interpolateProvider) {
+            $interpolateProvider.startSymbol('##');
+            $interpolateProvider.endSymbol('##');
+        }]).controller("DemoController", function ($scope) {
+            $scope.name = "Siddique";
+
+        });
+    </script>
+</head>
+<body ng-app>
+
+<div>
+    <a ng-href="img/{{username}}.jpg">Hello {{username}}!</a>
+</div>
+
+
+</body>
+</html>
