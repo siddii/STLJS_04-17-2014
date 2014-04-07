@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+    <script>
+        angular.module('bootstrap-markup-preview', [])
+                .directive('preview', function () {
+                    return {
+                        restrict: 'E',
+                        transclude: true,
+                        template: '<div class="panel panel-default">' +
+                                '<div class="panel-heading">' +
+                                '<h3 class="panel-title">Preview</h3>' +
+                                '</div>' +
+                                '<div class="panel-body">' +
+                                '<div class="row">' +
+                                '<div ng-transclude class="col-xs-12"></div>' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>'
+                    };
+                })
+                .controller('MarkupPreviewController', ['$scope', '$sce', function ($scope, $sce) {
+                    $scope.$watch('markup', function (oldValue, newValue) {
+                        $scope.markup = $sce.trustAsHtml($scope.markup);
+                    })
+                }]);
+    </script>
+</head>
+<body ng-app="bootstrap-markup-preview" ng-controller="MarkupPreviewController">
+
+<div class="container">
+    <h1 class="page-header text-center">Bootstrap Markup Preview</h1>
+
+    <div class="row">
+        <form role="form">
+            <div class="form-group">
+                <label for="markup">Markup</label>
+                <input type="text" ng-model="markup" class="form-control" id="markup"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <preview>
+        <div ng-bind-html="markup"/>
+    </preview>
+</div>
+</body>
+</html>
