@@ -13,26 +13,26 @@
     <script type="text/javascript" src="../lib/angular-touch/angular-touch.js"></script>
 
     <script type="text/javascript">
-        angular.module('CarouselSwipe', ['ngTouch']).controller('SwipeController', ['$swipe', function ($swipe) {
-            $swipe.swipeLeft = function () {
-                alert('#### swipeLeft');
+        angular.module('CarouselSwipe', ['ngTouch']).controller('SwipeController', ['$scope', function ($scope) {
+            var $carousel = $('#example-carousel');
+
+            $scope.prevSlide = function () {
+                $carousel.carousel('prev');
             };
 
-            $swipe.swipeRight = function () {
-                alert('#### swipeRight');
+            $scope.nextSlide = function () {
+                $carousel.carousel('next');
             };
         }]);
     </script>
 
 </head>
-<body>
+<body ng-app="CarouselSwipe">
 
-
-<div class="container">
+<div class="container" ng-controller="SwipeController">
     <h1 class="page-header text-center">Carousel Swipe</h1>
-
     <div class="row">
-        <div id="example-carousel" ng-swipe-left="swipeLeft();" ng-swipe-right="swipeRight();" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="false">
+        <div id="example-carousel" ng-swipe-left="nextSlide();" ng-swipe-right="prevSlide();" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="false">
             <div class="carousel-inner">
                 <div class="item active">
                     <h2 class="text-center">Slide 1</h2>
