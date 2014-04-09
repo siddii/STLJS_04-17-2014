@@ -1,1 +1,0 @@
-Content-Security-Policy:default-src 'none';style-src 'self';frame-src https://www.youtube.com https://speakerdeck.com;script-src 'self' https://ssl.google-analytics.com;img-src 'self' https://ssl.google-analytics.com data:;font-src 'self'
