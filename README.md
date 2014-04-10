@@ -3,6 +3,7 @@
 
 References:
 
+* http://www.html5rocks.com/en/tutorials/security/content-security-policy/
 * https://code.google.com/p/mustache-security/
 * http://www.slideshare.net/x00mario/jsmvcomfg-to-sternly-look-at-javascript-mvc-and-templating-frameworks
 * https://developer.chrome.com/extensions/contentSecurityPolicy
