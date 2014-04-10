@@ -4,16 +4,48 @@
     <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
     <script>
         angular.module('digest-vs-apply', []).controller("DemoController", ['$scope', function ($scope) {
+            $scope.parents = [];
 
-            $scope.treeObject =
+            //create scope tree
+            for(var i=0; i < 10; i++) {
+                $scope.parents[i] = $scope.parents[i] || {};
+                $scope.parents[i].name = "I am Parent " + (i + 1);
 
+
+                $scope.parents[i].children = [];
+                for(var j=0; j < 5; j++) {
+                    $scope.parents[i].children[j] = $scope.parents[i].children[j] || {};
+                    $scope.parents[i].children[j].name = "I am Child " + (j + 1);
+                }
+            }
+
+            $scope.addMoreChild = function (parent) {
+                parent.children.push({name: 'I am Child ' + (parent.children.length + 1)})
+            }
+
+            $scope.$watch(function (oldV, newV) {
+                console.log('###### Something Changed');
+            }, true);
         }
-        ])
+        ]);
     </script>
 </head>
-<body ng-app="digest-vs-apply">
+<body ng-app="digest-vs-apply" ng-controller="DemoController">
 <h1 class="text-center">Digest vs. Apply</h1>
+    <ul>
+        <li ng-repeat="parent in parents">
+            <h2>{{parent.name}}</h2>
 
+            <ul>
+            <li ng-repeat="child in parent.children">
+                <h3>{{child.name}}</h3>
+                <countdown/>
+                <!--<button ng-if="$last" ng-click="addMoreChild(parent);">Add More Child</button>-->
+            </li>
+            </ul>
+
+        </li>
+    </ul>
 
 </body>
 </html>
