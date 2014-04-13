@@ -4,9 +4,10 @@ module.exports = function (grunt) {
 
   function csp(){
     return function(req, res, next){
-      res.setHeader("X-WebKit-CSP", "default-src 'self' http://www.html5rocks.com/");
-      res.setHeader("X-Content-Security-Policy", "default-src 'self' http://www.html5rocks.com/");
-      res.setHeader("Content-Security-Policy", "default-src 'self' http://www.html5rocks.com/");
+      res.setHeader("Access-Control-Allow-Origin", "*"); // so that evilhost's content can be imported
+      res.setHeader("X-WebKit-CSP", "default-src 'self' http://evilhost:8000/ style-src 'self' 'unsafe-inline'");
+      res.setHeader("X-Content-Security-Policy", "default-src 'self' http://evilhost:8000/ style-src 'self' 'unsafe-inline'");
+      res.setHeader("Content-Security-Policy", "default-src 'self' http://evilhost:8000/ style-src 'self' 'unsafe-inline'");
       next();
     };
   }
@@ -17,11 +18,11 @@ module.exports = function (grunt) {
         options: {
           base: '.',
           keepalive: true
-//          middleware: function(connect, options){
+//          ,middleware: function(connect, options){
 //            return [
 //              csp(),
-//              connect.static(String('.')),
-//              connect.directory(String('.'))
+//              connect.static(__dirname),
+//              connect.directory(__dirname)
 //            ];
 //          }
         }
