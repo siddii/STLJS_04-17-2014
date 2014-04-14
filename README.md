@@ -1,7 +1,17 @@
 
+##Installation
+Install the required dependencies for running code in this repo
+```bash
+npm install
+bower install
+```
 
+##Run the following script to start the server...
+```bash
+grunt
+```
 
-References:
+###References:
 
 * http://www.html5rocks.com/en/tutorials/security/content-security-policy/
 * https://code.google.com/p/mustache-security/
