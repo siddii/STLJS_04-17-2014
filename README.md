@@ -1,15 +1,13 @@
 
 ##Installation
-Install the required dependencies for running code in this repo
-```bash
-npm install
-bower install
-```
+Install dependencies for running code in this repo
 
-##Run the following script to start the server...
-```bash
-grunt
-```
+    npm install
+    bower install
+
+##Run grunt to start the server...
+
+    grunt
 
 ###References:
 
