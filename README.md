@@ -13,7 +13,7 @@ Install dependencies for running code in this repo
 Please have a look at [Gruntfile.js](https://github.com/siddii/STLJS_04-17-2014/blob/master/Gruntfile.js). By default it is setup to run with CSP middleware.
 For running the code under `mustache-security`, you need to turn off CSP middleware.
 
-**Notes: There is a copy of [hosts](https://github.com/siddii/STLJS_04-17-2014/blob/master/hosts) file available, which I used while running this code.**
+***Note: There is a copy of [hosts](https://github.com/siddii/STLJS_04-17-2014/blob/master/hosts) file available, which I used while running this code.***
 
 ###References:
 
