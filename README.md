@@ -1,15 +1,19 @@
+### Advanced AngularJS - St. Louis JavaScript Meetup Video
 
-##Installation
+[![Advanced AngularJS](http://img.youtube.com/vi/bNykjhhDegc/0.jpg)](https://www.youtube.com/watch?v=bNykjhhDegc)
+
+
+###Installation
 Install dependencies for running code in this repo
 
     npm install
     bower install
 
-##Run grunt to start the server...
+###Run grunt to start the server...
 
     grunt
 
-###CSP middleware
+####CSP middleware
 Please have a look at [Gruntfile.js](https://github.com/siddii/STLJS_04-17-2014/blob/master/Gruntfile.js). By default it is setup to run with CSP middleware.
 For running the code under `mustache-security`, you need to turn off CSP middleware.
 
