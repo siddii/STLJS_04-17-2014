@@ -1,4 +1,4 @@
-### Advanced AngularJS - St. Louis JavaScript Meetup Video
+### Advanced AngularJS - St. Louis JavaScript Meetup Video (04-17-2014)
 
 [![Advanced AngularJS](http://img.youtube.com/vi/bNykjhhDegc/0.jpg)](https://www.youtube.com/watch?v=bNykjhhDegc)
 
