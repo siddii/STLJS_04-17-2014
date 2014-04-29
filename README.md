@@ -1,10 +1,10 @@
 ### Advanced AngularJS - St. Louis JavaScript Meetup (04-17-2014)
 
-Part 2 of series of talk on AngularJS. This talk provides a deep dive into some of the advanced concepts in AngularJS like *ng-csp*,  *mustache-security*, *ng-touch* etc. 
+**Part 2** of series of talk on AngularJS. This talk provides a deep dive into some of the advanced concepts in AngularJS like *ng-csp*,  *mustache-security*, *ng-touch* etc. 
 
 [![Advanced AngularJS](http://img.youtube.com/vi/bNykjhhDegc/0.jpg)](https://www.youtube.com/watch?v=bNykjhhDegc)
 
-For part 1 of the talk, please proceed to - [An Angle on AngularJS](https://github.com/siddii/STLJS_08-15-2013) 
+For **part 1** of the talk, please proceed to - [An Angle on AngularJS](https://github.com/siddii/STLJS_08-15-2013) 
 
 ###Installation
 Install dependencies for running code in this repo
